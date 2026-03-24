@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Остап Молодий — Профіль гравця</title>
+
+    <!-- CSS у тій самій папці -->
+    <link rel="stylesheet" href="pm.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div class="left-group">
+        <!-- Повернення на рівень вище -->
+        <a href="../mobile.html" class="back-button" id="back-btn">← Назад</a>
+        <img src="../dynamo.png" class="club-logo">
+    </div>
+</header>
+
+<div class="player-wrapper">
+
+    <!-- ЛІВА ЧАСТИНА -->
+    <div class="left-side">
+        <h1 class="player-name" id="player-name">Остап Молодий</h1>
+        <div class="underline"></div>
+
+        <div class="param-row">
+
+            <div class="param-block">
+                <div class="param-title" id="pos-title">Позиція</div>
+                <div class="param-value" id="pos-value">Півзахисник</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="nat-title">Національність</div>
+                <div class="param-value" id="nat-value">Україна</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="birth-title">Дата народження</div>
+                <div class="param-value" id="birth-value">06.08.2008</div>
+            </div>
+
+        </div>
+
+        <p class="description" id="desc">
+            Остап Молодий – універсальний півзахисник, який активно працює як в атаці, так і в обороні.
+            Він добре контролює м’яч, впевнено просуває його вперед і допомагає команді будувати атаки.
+            Остап відзначається хорошим баченням поля, точними передачами та вмінням знаходити простір
+            між лініями суперника. Він також може ефективно грати на флангах — як у захисті, так і в атаці.
+        </p>
+    </div>
+
+    <!-- ПРАВА ЧАСТИНА -->
+    <div class="right-side">
+        <div class="big-number">6</div>
+        <img src="остап.png" class="player-photo">
+    </div>
+
+</div>
+
+<script>
+let lang = localStorage.getItem("lang") || "ua";
+
+const translations = {
+    ua: {
+        back: "← Назад",
+        name: "Остап Молодий",
+
+        pos_title: "Позиція",
+        nat_title: "Національність",
+        birth_title: "Дата народження",
+
+        position: "Півзахисник",
+        nationality: "Україна",
+        birth: "06.08.2008",
+
+        description: "Остап Молодий – універсальний півзахисник, який активно працює як в атаці, так і в обороні. Він добре контролює м’яч, впевнено просуває його вперед і допомагає команді будувати атаки. Остап відзначається хорошим баченням поля, точними передачами та вмінням знаходити простір між лініями суперника. Він також може ефективно грати на флангах — як у захисті, так і в атаці."
+    },
+
+    en: {
+        back: "← Back",
+        name: "Ostap Molodyy",
+
+        pos_title: "Position",
+        nat_title: "Nationality",
+        birth_title: "Date of birth",
+
+        position: "Midfielder",
+        nationality: "Ukraine",
+        birth: "06 August 2008",
+
+        description: "Ostap Molodyy is a versatile midfielder who contributes actively in both attack and defense. He controls the ball well, confidently progresses it forward, and helps the team build attacks. Ostap is known for his strong vision, accurate passing, and ability to find space between the opponent’s lines. He can also play effectively on the flanks, whether in defensive or attacking roles."
+    }
+};
+
+function applyTranslation() {
+    const t = translations[lang];
+
+    document.getElementById("back-btn").textContent = t.back;
+    document.getElementById("player-name").textContent = t.name;
+
+    document.getElementById("pos-title").textContent = t.pos_title;
+    document.getElementById("nat-title").textContent = t.nat_title;
+    document.getElementById("birth-title").textContent = t.birth_title;
+
+    document.getElementById("pos-value").textContent = t.position;
+    document.getElementById("nat-value").textContent = t.nationality;
+    document.getElementById("birth-value").textContent = t.birth;
+
+    document.getElementById("desc").textContent = t.description;
+}
+
+applyTranslation();
+</script>
+
+</body>
+</html>

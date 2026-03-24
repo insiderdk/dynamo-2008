@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Єгор Шепелєв — Профіль гравця</title>
+
+    <!-- CSS у тій самій папці -->
+    <link rel="stylesheet" href="pm.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div class="left-group">
+        <!-- Повернення на рівень вище -->
+        <a href="../mobile.html" class="back-button" id="back-btn">← Назад</a>
+        <img src="../dynamo.png" class="club-logo">
+    </div>
+</header>
+
+<div class="player-wrapper">
+
+    <!-- ЛІВА ЧАСТИНА -->
+    <div class="left-side">
+        <h1 class="player-name" id="player-name">Єгор Шепелєв</h1>
+        <div class="underline"></div>
+
+        <div class="param-row">
+
+            <div class="param-block">
+                <div class="param-title" id="pos-title">Позиція</div>
+                <div class="param-value" id="pos-value">Воротар</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="nat-title">Національність</div>
+                <div class="param-value" id="nat-value">Україна</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="birth-title">Дата народження</div>
+                <div class="param-value" id="birth-value">09.06.2008</div>
+            </div>
+
+        </div>
+
+        <p class="description" id="desc">
+            Єгор Шепелєв – надійний воротар, який демонструє впевненість у всіх аспектах гри. 
+            Він відзначається швидкою реакцією, хорошим читанням епізодів та вмінням організовувати 
+            оборону команди. Єгор впевнено діє на дальніх ударах і верхових м'ячах, допомагаючи 
+            уникати небезпечних моментів.
+        </p>
+    </div>
+
+    <!-- ПРАВА ЧАСТИНА -->
+    <div class="right-side">
+        <div class="big-number">99</div>
+        <img src="вртр2.png" class="player-photo">
+    </div>
+
+</div>
+
+<script>
+let lang = localStorage.getItem("lang") || "ua";
+
+const translations = {
+    ua: {
+        back: "← Назад",
+        name: "Єгор Шепелєв",
+
+        pos_title: "Позиція",
+        nat_title: "Національність",
+        birth_title: "Дата народження",
+
+        position: "Воротар",
+        nationality: "Україна",
+        birth: "09.06.2008",
+
+        description: "Єгор Шепелєв – надійний воротар, який демонструє впевненість у всіх аспектах гри. Він відзначається швидкою реакцією, хорошим читанням епізодів та вмінням організовувати оборону команди. Єгор впевнено діє на дальніх ударах і верхових м'ячах, допомагаючи уникати небезпечних моментів."
+    },
+
+    en: {
+        back: "← Back",
+        name: "Yehor Shepelev",
+
+        pos_title: "Position",
+        nat_title: "Nationality",
+        birth_title: "Date of birth",
+
+        position: "Goalkeeper",
+        nationality: "Ukraine",
+        birth: "09 June 2008",
+
+        description: "Yehor Shepelev is a reliable goalkeeper who shows confidence in all aspects of goalkeeping. He is known for his quick reactions, strong game reading, and ability to organize the team's defense. Yehor performs well on long-range shots and high balls, helping the team avoid dangerous situations."
+    }
+};
+
+function applyTranslation() {
+    const t = translations[lang];
+
+    document.getElementById("back-btn").textContent = t.back;
+    document.getElementById("player-name").textContent = t.name;
+
+    document.getElementById("pos-title").textContent = t.pos_title;
+    document.getElementById("nat-title").textContent = t.nat_title;
+    document.getElementById("birth-title").textContent = t.birth_title;
+
+    document.getElementById("pos-value").textContent = t.position;
+    document.getElementById("nat-value").textContent = t.nationality;
+    document.getElementById("birth-value").textContent = t.birth;
+
+    document.getElementById("desc").textContent = t.description;
+}
+
+applyTranslation();
+</script>
+
+</body>
+</html>

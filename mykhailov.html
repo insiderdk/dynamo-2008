@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Олексій Михайлов — Профіль гравця</title>
+
+    <!-- CSS у тій самій папці -->
+    <link rel="stylesheet" href="pm.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div class="left-group">
+        <!-- Повернення на рівень вище -->
+        <a href="../mobile.html" class="back-button" id="back-btn">← Назад</a>
+        <img src="../dynamo.png" class="club-logo">
+    </div>
+</header>
+
+<div class="player-wrapper">
+
+    <!-- ЛІВА ЧАСТИНА -->
+    <div class="left-side">
+        <h1 class="player-name" id="player-name">Олексій Михайлов</h1>
+        <div class="underline"></div>
+
+        <div class="param-row">
+
+            <div class="param-block">
+                <div class="param-title" id="pos-title">Позиція</div>
+                <div class="param-value" id="pos-value">Нападник</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="nat-title">Національність</div>
+                <div class="param-value" id="nat-value">Україна</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="birth-title">Дата народження</div>
+                <div class="param-value" id="birth-value">23.12.2008</div>
+            </div>
+
+        </div>
+
+        <p class="description" id="desc">
+            Олексій Михайлов – потужний та результативний центральний нападник, який добре грає 
+            в штрафному майданчику суперника. Він має хороше відчуття моменту, вміє відкриватися 
+            під передачі та впевнено завершувати атаки. Олексій також ефективний у боротьбі 
+            з захисниками та допомагає команді завдяки своїй фізичній силі й наполегливості.
+        </p>
+    </div>
+
+    <!-- ПРАВА ЧАСТИНА -->
+    <div class="right-side">
+        <div class="big-number">9</div>
+        <img src="леша.png" class="player-photo">
+    </div>
+
+</div>
+
+<script>
+let lang = localStorage.getItem("lang") || "ua";
+
+const translations = {
+    ua: {
+        back: "← Назад",
+        name: "Олексій Михайлов",
+
+        pos_title: "Позиція",
+        nat_title: "Національність",
+        birth_title: "Дата народження",
+
+        position: "Нападник",
+        nationality: "Україна",
+        birth: "23.12.2008",
+
+        description: "Олексій Михайлов – потужний та результативний центральний нападник, який добре грає в штрафному майданчику суперника. Він має хороше відчуття моменту, вміє відкриватися під передачі та впевнено завершувати атаки. Олексій також ефективний у боротьбі з захисниками та допомагає команді завдяки своїй фізичній силі й наполегливості."
+    },
+
+    en: {
+        back: "← Back",
+        name: "Oleksii Mykhailov",
+
+        pos_title: "Position",
+        nat_title: "Nationality",
+        birth_title: "Date of birth",
+
+        position: "Forward",
+        nationality: "Ukraine",
+        birth: "23 December 2008",
+
+        description: "Oleksii Mykhailov is a powerful and effective central forward who performs well inside the opponent's penalty area. He has a strong sense of timing, knows how to find space for passes, and confidently finishes attacks. Oleksii is also effective in duels with defenders and helps the team thanks to his physical strength and determination."
+    }
+};
+
+function applyTranslation() {
+    const t = translations[lang];
+
+    document.getElementById("back-btn").textContent = t.back;
+    document.getElementById("player-name").textContent = t.name;
+
+    document.getElementById("pos-title").textContent = t.pos_title;
+    document.getElementById("nat-title").textContent = t.nat_title;
+    document.getElementById("birth-title").textContent = t.birth_title;
+
+    document.getElementById("pos-value").textContent = t.position;
+    document.getElementById("nat-value").textContent = t.nationality;
+    document.getElementById("birth-value").textContent = t.birth;
+
+    document.getElementById("desc").textContent = t.description;
+}
+
+applyTranslation();
+</script>
+
+</body>
+</html>

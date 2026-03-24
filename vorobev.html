@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Олександр Воробев — Профіль гравця</title>
+
+    <!-- CSS у тій самій папці -->
+    <link rel="stylesheet" href="pm.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div class="left-group">
+        <!-- Повернення на рівень вище -->
+        <a href="../mobile.html" class="back-button" id="back-btn">← Назад</a>
+        <img src="../dynamo.png" class="club-logo">
+    </div>
+</header>
+
+<div class="player-wrapper">
+
+    <!-- ЛІВА ЧАСТИНА -->
+    <div class="left-side">
+        <h1 class="player-name" id="player-name">Олександр Воробев</h1>
+        <div class="underline"></div>
+
+        <div class="param-row">
+
+            <div class="param-block">
+                <div class="param-title" id="pos-title">Позиція</div>
+                <div class="param-value" id="pos-value">Захисник</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="nat-title">Національність</div>
+                <div class="param-value" id="nat-value">Україна</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="birth-title">Дата народження</div>
+                <div class="param-value" id="birth-value">07.11.2008</div>
+            </div>
+
+        </div>
+
+        <p class="description" id="desc">
+            Олександр Воробев – надійний центральний захисник, який впевнено діє в обороні 
+            та добре читає гру. Він відзначається сильним позиційним захистом, умінням 
+            вигравати єдиноборства та допомагати команді зберігати баланс у захисті. 
+            Також активно підтримує команду під час стандартів.
+        </p>
+    </div>
+
+    <!-- ПРАВА ЧАСТИНА -->
+    <div class="right-side">
+        <div class="big-number">4</div>
+        <img src="саш.png" class="player-photo">
+    </div>
+
+</div>
+
+<script>
+let lang = localStorage.getItem("lang") || "ua";
+
+const translations = {
+    ua: {
+        back: "← Назад",
+        name: "Олександр Воробев",
+
+        pos_title: "Позиція",
+        nat_title: "Національність",
+        birth_title: "Дата народження",
+
+        position: "Захисник",
+        nationality: "Україна",
+        birth: "07.11.2008",
+
+        description: "Олександр Воробев – надійний центральний захисник, який впевнено діє в обороні та добре читає гру. Він відзначається сильним позиційним захистом, умінням вигравати єдиноборства та допомагати команді зберігати баланс у захисті. Також активно підтримує команду під час стандартів."
+    },
+
+    en: {
+        back: "← Back",
+        name: "Oleksandr Vorobev",
+
+        pos_title: "Position",
+        nat_title: "Nationality",
+        birth_title: "Date of birth",
+
+        position: "Defender",
+        nationality: "Ukraine",
+        birth: "07 November 2008",
+
+        description: "Oleksandr Vorobev is a reliable central defender who performs confidently in defense and reads the game well. He is known for strong positional play, winning duels, and helping the team maintain defensive balance. Oleksandr also actively supports the team during set pieces."
+    }
+};
+
+function applyTranslation() {
+    const t = translations[lang];
+
+    document.getElementById("back-btn").textContent = t.back;
+    document.getElementById("player-name").textContent = t.name;
+
+    document.getElementById("pos-title").textContent = t.pos_title;
+    document.getElementById("nat-title").textContent = t.nat_title;
+    document.getElementById("birth-title").textContent = t.birth_title;
+
+    document.getElementById("pos-value").textContent = t.position;
+    document.getElementById("nat-value").textContent = t.nationality;
+    document.getElementById("birth-value").textContent = t.birth;
+
+    document.getElementById("desc").textContent = t.description;
+}
+
+applyTranslation();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дмитро Євтушенко — Профіль гравця</title>
+
+    <!-- CSS у тій самій папці -->
+    <link rel="stylesheet" href="pm.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+    <div class="left-group">
+        <!-- Повернення на рівень вище -->
+        <a href="../mobile.html" class="back-button" id="back-btn">← Назад</a>
+        <img src="../dynamo.png" class="club-logo">
+    </div>
+</header>
+
+<div class="player-wrapper">
+
+    <!-- ЛІВА ЧАСТИНА -->
+    <div class="left-side">
+        <h1 class="player-name" id="player-name">Дмитро Євтушенко</h1>
+        <div class="underline"></div>
+
+        <div class="param-row">
+
+            <div class="param-block">
+                <div class="param-title" id="pos-title">Позиція</div>
+                <div class="param-value" id="pos-value">Вінгер</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="nat-title">Національність</div>
+                <div class="param-value" id="nat-value">Україна</div>
+            </div>
+
+            <div class="param-block">
+                <div class="param-title" id="birth-title">Дата народження</div>
+                <div class="param-value" id="birth-value">26.06.2008</div>
+            </div>
+
+        </div>
+
+        <p class="description" id="desc">
+            Дмитро Євтушенко – швидкий та технічний вінгер, який відзначається хорошим дриблінгом 
+            і вмінням створювати небезпечні моменти на фланзі. Він активно підключається до атак, 
+            добре бачить поле та часто віддає точні передачі партнерам.
+        </p>
+    </div>
+
+    <!-- ПРАВА ЧАСТИНА -->
+    <div class="right-side">
+        <div class="big-number">17</div>
+        <img src="евтушенко.png" class="player-photo">
+    </div>
+
+</div>
+
+<script>
+let lang = localStorage.getItem("lang") || "ua";
+
+const translations = {
+    ua: {
+        back: "← Назад",
+        name: "Дмитро Євтушенко",
+
+        pos_title: "Позиція",
+        nat_title: "Національність",
+        birth_title: "Дата народження",
+
+        position: "Вінгер",
+        nationality: "Україна",
+        birth: "26.06.2008",
+
+        description: "Дмитро Євтушенко – швидкий та технічний вінгер, який відзначається хорошим дриблінгом і вмінням створювати небезпечні моменти на фланзі. Він активно підключається до атак, добре бачить поле та часто віддає точні передачі партнерам."
+    },
+
+    en: {
+        back: "← Back",
+        name: "Dmytro Yevtushenko",
+
+        pos_title: "Position",
+        nat_title: "Nationality",
+        birth_title: "Date of birth",
+
+        position: "Winger",
+        nationality: "Ukraine",
+        birth: "26 June 2008",
+
+        description: "Dmytro Yevtushenko is a fast and technical winger known for his strong dribbling and ability to create dangerous moments on the flank. He actively joins attacks, reads the game well, and often delivers accurate passes to teammates."
+    }
+};
+
+function applyTranslation() {
+    const t = translations[lang];
+
+    document.getElementById("back-btn").textContent = t.back;
+    document.getElementById("player-name").textContent = t.name;
+
+    document.getElementById("pos-title").textContent = t.pos_title;
+    document.getElementById("nat-title").textContent = t.nat_title;
+    document.getElementById("birth-title").textContent = t.birth_title;
+
+    document.getElementById("pos-value").textContent = t.position;
+    document.getElementById("nat-value").textContent = t.nationality;
+    document.getElementById("birth-value").textContent = t.birth;
+
+    document.getElementById("desc").textContent = t.description;
+}
+
+applyTranslation();
+</script>
+
+</body>
+</html>
